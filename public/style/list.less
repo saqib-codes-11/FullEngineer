@@ -1,0 +1,110 @@
+.list{
+  //indiivdual list items page
+
+  .items{
+    .flexInit();
+    justify-content: space-around;
+    align-items: center;
+
+    //individual list items
+
+    .item{
+      background-color: @mainl;
+      border-radius: 8px;
+      .pad(8px);
+      margin: 8px;
+      .flexInit();
+      .flexCenterRow();
+      h1{
+        margin: 0;
+      }
+      height: 200px;
+      width: 100%;
+      @media screen and(min-width: @mb1){
+        width: 45%;
+      }
+
+    }
+  }
+
+  //individual item page
+
+  .item-page{
+    width: 100%;
+    //.flexInit();
+
+    //item page navigation bar
+
+    .item-navigation{
+      width: 100%;
+      .flexInit();
+      .flexStartRow();
+      height: @navHeightMobile;
+      @media screen and (min-width: @mb2){
+        height: @navHeight;
+      }
+
+      a{
+        height: 100%;
+        .flexInit();
+        .flexCenterRow();
+        min-width: 100px;
+        transition: 0.125s;
+
+      }
+
+
+
+    }
+
+    .item-content{
+      .pad(8px);
+      .flexInit();
+      .flexCenterRow();
+    }
+  }
+}
+
+//item page color themeing
+
+.light .list{
+  .item{
+    background-color: @mainl;
+    color: @fl1;
+    box-shadow: @sidel 2px 2px 2px;
+  }
+
+  .item-navigation{
+    background-color: @mainl;
+    color: @fl1;
+
+    a{
+      color: @fl2;
+    }
+
+    .active{
+      background-color: @sidel;
+    }
+  }
+}
+
+.dark .list{
+  .item{
+    background-color: @maind;
+    color: @fd1;
+    box-shadow: @sided 2px 2px 2px;
+  }
+
+  .item-navigation{
+    background-color: @maind;
+    color: @fd1;
+
+    a{
+      color: @fd2;
+    }
+
+    .active{
+      background-color: @sided;
+    }
+  }
+}

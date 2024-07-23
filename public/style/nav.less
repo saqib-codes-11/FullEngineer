@@ -1,0 +1,125 @@
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: @navHeightMobile;
+  width: 100%;
+  box-shadow: rgba(21,21,21,0.05) 6px 6px 6px;
+  z-index: 100;
+
+
+  .flexInit();
+  .flexBetweenRow();
+
+  @media screen and (min-width: @mb2){
+    height: @navHeight;
+  }
+
+  //nav logo
+  .logo{
+    .flexInit();
+    .flexCenterRow();
+    height: 100%;
+    width: @navHeightMobile;
+
+    img{
+      height: 100%;
+    }
+  }
+
+  //non-mobile navigation
+
+  .link-wrapper{
+    display: none;
+    .flexEvenRow();
+    min-width: 150px;
+    .pad(8px);
+    @media screen and (min-width: @mb2){
+      .flexInit();
+    }
+  }
+
+  //drop down button
+  .drop-down{
+    .flexInit();
+    .flexCenterRow();
+    width: @navHeightMobile;
+    height: 100%;
+    cursor: pointer;
+
+    @media screen and (min-width: @mb2){
+      display: none;
+    }
+  }
+
+
+
+  .active{
+    text-decoration: underline;
+  }
+
+
+
+}
+
+//nav color themeings
+.light nav {
+  background-color: @mainl;
+  color: @fl1;
+
+  a{
+    color: @fl2;
+  }
+
+  .side-bar{
+    background-color: @minorl;
+    a{
+      color: @fl3;
+    }
+  }
+}
+
+.dark nav{
+  background-color: @maind;
+  color: @fd1;
+
+  a{
+    color: @fd2;
+  }
+
+  .side-bar{
+    background-color: @minord;
+    a{
+      color: @fd3;
+    }
+  }
+}
+
+//mobile navigation menu
+.side-bar{
+  .flexInit();
+  .flexStartColumn();
+  position: fixed;
+  z-index: 97;
+  top: @navHeightMobile;
+  height: 100vh;
+  transition: 0.425s;
+  background-color: @minorl;
+  a{
+    color: @fl3;
+    .flexInit();
+    .flexCenterRow();
+    height: 60px;
+  }
+
+  width: 100%;
+
+
+  @media screen and (min-width: @mb1){
+    width: 300px;
+  }
+
+  @media screen and (min-width: @mb2){
+    display: none;
+  }
+}

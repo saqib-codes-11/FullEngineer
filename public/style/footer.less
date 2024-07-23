@@ -1,0 +1,76 @@
+footer{
+  //initialize footer styling
+
+  width: 100%;
+  background-color: @mainl;
+  color: @fl1;
+  min-height: 200px;
+  .pad(8px);
+  //position: absolute;
+  //bottom: 0;
+  .flexInit();
+  .flexCenterRow();
+
+  //wrapper for footer .col
+  .col-wrap{
+    .flexInit();
+    .flexCenterRow();
+  }
+
+  //footer dividers
+  .foot-divider{
+    min-height: 100px;
+    width: 100%;
+    margin-top: 10px;
+    .flexInit();
+    .flexCenterRow();
+
+    *{
+      margin-right: 8px;
+    }
+
+  }
+
+  //individual columns in footer
+
+  .col{
+    width: 100%;
+    .flexInit();
+    .flexCenterColumn();
+
+    @media screen and (min-width: @mb1){
+      width: 200px;
+    }
+
+    ul{
+      .flexInit();
+      .flexCenterColumn();
+      padding: 0;
+
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+
+
+  }
+}
+
+//styling for color themes
+.light footer{
+  background-color: @mainl;
+  color: @fl1;
+
+  a{
+    color: @fl1;
+  }
+}
+
+.dark footer{
+  background-color: @maind;
+  color: @fd1;
+
+  a{
+    color: @fd1;
+  }
+}

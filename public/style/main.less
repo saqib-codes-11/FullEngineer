@@ -1,0 +1,193 @@
+//margin clear
+* {
+  margin: 0;
+}
+
+html{
+  font-family: Roboto;
+}
+
+//text styling
+p, h1, h2, h3, h4, h5, h6, label {
+  margin-bottom: 16px;
+}
+
+a{
+  text-decoration: none;
+}
+
+//core wrapper styling
+#root {
+  box-sizing: border-box;
+  padding-top: @navHeightMobile;
+  min-height: 100vh;
+  position: relative;
+
+  @media screen and (min-width: @mb2) {
+    padding-top: @navHeight;
+  }
+
+}
+
+#App {
+  width: 100%;
+  .flexInit();
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+#App.light {
+  background-color: @backgroundLight;
+  color: @fl1;
+}
+
+#App.dark {
+  background-color: @backgroundDark;
+  color: @fd1;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.page-wrapper {
+  width: 100%;
+  .flexInit();
+  .flexStartColumn();
+  .pad(10px 0 10px 0);
+
+  &.center{
+    .flexCenterColumn();
+  }
+  min-height: 100vh;
+}
+
+//core content filler elements
+.content-block {
+  width: 100%;
+  .flexInit();
+  .flexCenterRow();
+  min-height: 250px;
+  position: relative;
+
+  .column {
+    .flexInit();
+    width: 100%;
+    min-height: 250px;
+    .flexStartColumn();
+    @media screen and (min-width: @mb1) {
+      width: 50%;
+    }
+
+    .block {
+      @media screen and (min-width: @mb1) {
+        width: 100%;
+      }
+    }
+  }
+
+  .block {
+    width: 100%;
+    min-height: 250px;
+    box-sizing: border-box;
+    border: 1px solid black;
+
+    @media screen and (min-width: @mb1) {
+      width: 50%;
+    }
+
+    .flexInit();
+    .flexCenterColumn();
+
+    background-size: cover;
+    background-position: center;
+
+    .cover{
+      min-height: 250px;
+    }
+
+    &.tall {
+      min-height: 500px;
+      .cover{
+        min-height: 500px;
+      }
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+  min-height: 150px;
+  .flexInit();
+  .flexCenterRow();
+}
+
+.content-wrapper {
+  max-width: @mb2;
+  .pad(10px)
+}
+
+.splash {
+  width: 100%;
+  height: 450px;
+  .flexInit();
+  .flexCenterRow();
+  background-size: cover;
+  background-position: center;
+}
+
+//cover is used to go over any block or splash with a background color
+.cover {
+  height: 100%;
+  width: 100%;
+  .flexInit();
+  .flexCenterRow();
+}
+
+
+
+//colors based on theme
+.light {
+  .content-block {
+    background-color: @mainl;
+
+    .block:nth-child(3n+1) {
+      background-color: @sidel;
+    }
+
+  }
+
+  .divider {
+    background-color: @sided;
+    color: @fd1;
+  }
+}
+
+.dark {
+  .content-block {
+    background-color: @maind;
+
+    .block:nth-child(3n+1) {
+      background-color: @sided;
+    }
+
+    .column:nth-child(2){
+      .block{
+        background-color: @maind;
+      }
+
+      .block:nth-child(2){
+        background-color: @minord;
+      }
+    }
+
+  }
+
+  .divider {
+    background-color: @sidel;
+    color: @fl1;
+  }
+}

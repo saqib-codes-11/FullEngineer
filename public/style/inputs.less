@@ -1,0 +1,169 @@
+//style for buttons
+
+.button{
+  height: 50px;
+  min-width: 110px;
+  .pad(4px);
+  border-radius: 50px;
+  .flexInit();
+  .flexCenterRow();
+  cursor: pointer;
+  transition: 0.125s;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+  font-size: 21px;
+
+  border: none;
+
+  @media screen and (min-width: @mb1){
+    height: 30px;
+    min-width: 60px;
+    .pad(4px);
+    border-radius: 30px;
+    font-size: 14px;
+  }
+
+  //when button is being highlight
+
+  &:focus{
+    outline: none;
+  }
+}
+
+//toggle input styling
+
+.toggle{
+  width: 80px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: 0.225s;
+  cursor: pointer;
+  position: relative;
+
+  //individual circle within toggle
+
+  .circle{
+    height: 35px;
+    width: 35px;
+    border-radius: 35px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    transition: 0.225s;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+  }
+
+  &.false{
+    .circle{
+      left: 42.5px;
+    }
+  }
+
+}
+
+//text input field styling
+
+.textField{
+  border: none;
+  height: 35px;
+  border-radius: 35px;
+  width: 100%;
+  box-sizing: border-box;
+  .pad(8px 12px);
+  font-size: 16px;
+  transition: 0.125s;
+
+  &:focus{
+    outline: none;
+    border: black 1px solid;
+  }
+}
+
+//wrapper for form related needs
+
+.form-wrap{
+  width: 100%;
+  .flexInit();
+  .flexStartColumn();
+  .pad(8px 16px);
+  h1,h2,h3,h4,h5,h6{
+    width: 100%;
+    text-align: left;
+  }
+  @media screen and (min-width: @mb1){
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 2px;
+  }
+  *{
+    margin-bottom: 16px;
+  }
+
+  //validation container for your form
+
+  .validation{
+    .warning{
+      color: @warn;
+    }
+
+    .success{
+      color: @good;
+    }
+  }
+
+}
+
+//colors based on theme
+
+.light{
+
+  .button{
+
+    background-color: @minorl;
+    color: @fl3;
+    &:hover{
+      background-color: @tintl;
+    }
+  }
+
+  .toggle{
+    background-color: @minorl;
+    .circle{
+      background-color: @sidel;
+    }
+
+    &.false{
+      background-color: @minord;
+    }
+  }
+
+  .form-wrap{
+    background-color: @mainl;
+  }
+}
+
+.dark{
+  .button{
+    background-color: @minord;
+    color: @fl2;
+    &:hover{
+      background-color: @tintd;
+    }
+  }
+
+  .toggle{
+    background-color: @minord;
+    .circle{
+      background-color: @sided;
+    }
+
+    &.false{
+      background-color: @minorl;
+    }
+  }
+
+  .form-wrap{
+    background-color: @maind;
+  }
+}
